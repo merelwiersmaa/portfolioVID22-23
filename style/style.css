@@ -1,0 +1,301 @@
+/*************/
+/* CSS RESET */
+/*************/
+
+
+/* naar een idee van Jen Simmons */
+*, *::after, *::before {
+    box-sizing:border-box;  
+  }
+  
+  
+  /**************/
+  /**** FONTS ***/
+  /**************/
+  
+  
+  @font-face {
+    font-family: 'whySoSerious';
+    src: url('../fonts/bearpaw_-webfont.woff2') format('woff2'),
+         url('../fonts/bearpaw_-webfont.woff') format('woff');
+    /* font-weight: normal;      =
+    font-style: normal;          = Getypt door Sanne
+    font-display: fallback;      =    */   
+  }
+  
+  @font-face {
+    font-family: 'tekstP';
+    src: url('../fonts/qarmic_sans_abridged-webfont.woff') format('woff'),
+         url('../fonts/qarmic_sans_abridged-webfont.woff2') format('woff2'); 
+  }
+  
+  
+  
+  /*********************/
+  /* CUSTOM PROPERTIES */
+  /*********************/
+  
+  
+  :root {
+    --color-titelsKopjes: rgb(200, 0, 0);
+    --color-kaarttafel:rgb(25, 95, 42);
+    --color-cards:rgb(235, 223, 196);
+    --color-tafelrand:rgb(238, 191, 120);
+    /* --color-achtergrondBody: rgb(26,26,26);  <-- rgb van achtergrond afbeelding*/
+    /* om de afbeelding en body achtergrond te matchen werkt niet met dezelfde
+    rgb code, dus moet ik de body rgb code iets verhogen, om het dezelfde kleur te geven. */
+    --color-achtergrondBody: rgb(34, 34, 34);
+  }
+  
+  
+  /********************/
+  /* ALGEMENE STYLING */
+  /********************/
+  
+  
+  body {
+    background-color: var(--color-achtergrondBody);
+    cursor: url(../images/icons8-joker-dc-32.png) 15 10, pointer; /* 15 10 Zorgt ervoor dat het klikpunt IN de Joker zit, niet aan het randje */
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    
+    /* Hieronder getypt door Sanne */
+    height: 37vh; 
+    background-image: url('../images/achtergrondV2.jpg');
+    background-size: auto 47vh;
+    background-position: center -10vh;
+    background-repeat: no-repeat;
+  }
+  
+  h1 {
+    rotate: -15deg;
+    padding-left: .5em;
+  
+    font-family: whySoSerious, fantasy; /* Mocht het whySoSerious font niet kunnen op de browser, dan pakt hij de fantasy */
+    font-size: 6.2em;
+  
+    color:var(--color-titelsKopjes);
+    text-shadow: 0em 0em 1.5em black;
+  }
+  
+  
+  /*****************/
+  /* ANIMATIE H1 */
+  /****************/
+  
+  
+  @keyframes serious {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg); /* Deze keyframes vormen de animatie voor de H1: hover (een rondje draaien) */
+    }
+  }
+  
+  h1:hover {
+    animation-name: serious;
+    animation-duration:.6s;
+    animation-iteration-count: infinite;
+  }
+  
+  
+  /*************************/
+  /* SECTIE 1: JOKERKAARTEN */
+  /*************************/
+  
+  
+  section:first-of-type {
+    background-color: var(--color-kaarttafel);
+  
+    margin-left: 3em;
+    margin-right: 3em;
+  
+    border-radius: 40em/5em;/* Van: https://css-tricks.com/almanac/properties/b/border-radius/ */
+    border-style: ridge;
+    border-width: 1.5em;
+    border-color: var(--color-tafelrand);
+  
+    box-shadow: inset 0px 5px 20px 5px black;
+  }
+  
+  ul {
+    display: flex;
+    justify-content: center;
+    gap: 7vw;
+    flex-wrap: wrap;
+  
+    margin:0;
+    padding:5em;
+  }
+  
+  li {
+    list-style: none;
+  }
+  
+  button {
+    display: flex; /* Zorgt dat alles mooi in het midden komt te staan */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: var(--color-cards);
+  
+    height: 15em;
+    width: 10em;
+    
+    border-radius: .5em;
+  
+    box-shadow: inset 3px 3px 3px white, 0px 5px 10px black; /* Een binnenshaduw en buitenshaduw */
+  
+    font-family: 'whySoSerious';
+  }
+  
+  
+  /****************************/
+  /* ANIMATIE JOKER KAARTEN */
+  /****************************/
+  
+  
+  li>button:focus-visible {
+    outline: groove .25em var(--color-titelsKopjes);
+    outline-offset: -.5em;
+    color: var(--color-titelsKopjes);
+  }
+  
+  li>button:hover { /* Tijdens de hover */
+    cursor: pointer;
+    transform: translateY(-3em);
+    transition-duration: .3s;
+    color: var(--color-titelsKopjes);
+  }
+  
+  
+  li>button:active  { /* Tijdens de muisklik */
+    transform: rotatey(180deg);
+    transition-duration: .4s;
+  }
+  
+  
+  /**********************************************************************/
+  /* THE DIALOGS, Bron van Sanne: https://codepen.io/shooft/pen/wvYgVKg
+  Ook het aanpassen van de dialog heeft Sanne geholpen */
+  /************************************************************************/
+  
+  
+  /*************/
+  /* DE DIALOG */
+  /*************/
+  
+  
+  dialog {
+    display:block;
+    position: fixed;
+    inset:0; /* Weet niet wat inset betekent */
+    
+    opacity:0; /* De dialog is wel in beeld, maar dan onzichtbaar en niet klikbaar */
+    pointer-events: none;
+  
+    background-color: var(--color-cards);
+    height: 45em;
+    width: 30em;
+    
+    border-radius: .5em;
+    box-shadow: inset 3px 3px 3px white, 0px 5px 10px black; /* Dezelfde stijling als de kleine joker kaartjes */
+  
+    transition: 1s;
+  }
+  
+  dialog[open] { /* De voorheen onzichtbare en niet klikbare dialog, komt nu wel tevoorschijn. */
+    opacity:1;
+    pointer-events: all;
+  }
+  
+  
+  /**********************/
+  /* DIALOG ACHTERGROND */
+  /**********************/
+  
+  
+  dialog::backdrop { /* Geblurrde achtergrond bij openen van dialog */
+    -webkit-backdrop-filter: blur(25px); /* Voor de eigenwijze safari die niet luisterd */
+    backdrop-filter: blur(25px);
+  }
+  
+  
+  /******************/
+  /* DIALOG CONTENT */
+  /******************/
+  
+  
+  dialog form {	
+   padding-left: 2em;
+   padding-right: 2em;
+  }
+  
+  dialog form h2 {
+    margin-top: .5em;
+  
+    font-family: whySoSerious;
+    font-size: 2em;
+  
+    color: var(--color-titelsKopjes);
+  }
+  
+  dialog form h3 {
+    font-family: tekstP;
+  }
+  
+  dialog form p {
+      font-family: tekstP;
+    font-size: .7em;
+  }
+  
+  dialog form img {
+    margin-top: 1em;
+  
+    height: 14em;
+    width: 23em;
+  
+    border-radius: .5em;
+  }
+  
+  
+  /*************/
+  /*SLUITKNOP*/
+  /*************/
+  
+  
+  /* de close button nam automatisch de styling over van de originele buttons (kaarten)
+  dus die moet ik hier 'resetten'. deze class geldt voor alle sluitknoppen van alle kaarten */
+  .sluitKnop {
+    position: absolute; /* Zorgt dat de sluitknop (kruisje) helemaal rechtsbovenin staat */
+    top: .3em;
+    right:.3em;
+  
+    height: 1.5em;
+    width: 1.5em;
+  
+    background-color: transparent;
+    color: var(--color-titelsKopjes);
+      font-size: 2.5em;
+    
+    border-style: none;
+    box-shadow: none;
+  }
+  
+  .sluitKnop:hover {
+    cursor: pointer;
+  }
+  
+  .sluitKnop:focus-visible {
+    outline: groove .15em var(--color-titelsKopjes);
+  }
+  
+  
+  
+  
