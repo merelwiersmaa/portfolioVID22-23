@@ -31,7 +31,7 @@
 :root {
   --color-titelsKopjes: rgb(255, 255, 255);
   --color-kaarttafel:rgb(238, 236, 199);
-  --color-cards:rgb(235, 223, 196);
+  --color-cards:rgb(250, 237, 248);
   --color-tafelrand:rgb(238, 191, 120);
   --color-h2:rgb(127, 70, 115);
   --color-achtergrondBody: rgb(226, 186, 219);
@@ -91,7 +91,7 @@ section:first-of-type {
 ul {
   display: flex;
   justify-content: center;
-  gap: 7vw;
+  gap: 10vw;
   flex-wrap: wrap;
 
   margin:0;
@@ -110,14 +110,17 @@ button {
 
   background-color: var(--color-cards);
 
-  height: 15em;
-  width: 10em;
+  height: 10em;
+  width: 7.5em;
   
   border-radius: .5em;
 
   box-shadow: inset .1875em .1875em .1875em white, 0px 5px 10px black; /* Een binnenshaduw en buitenshaduw */
 
-  font-family: 'whySoSerious';
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  color: var(--color-h2);
+  font-size: 1em;
 }
 
 
