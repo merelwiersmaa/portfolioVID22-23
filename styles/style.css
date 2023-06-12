@@ -30,7 +30,7 @@
 
 :root {
   --color-titelsKopjes: rgb(255, 255, 255);
-  --color-kaarttafel:rgb(25, 95, 42);
+  --color-kaarttafel:rgb(238, 236, 199);
   --color-cards:rgb(235, 223, 196);
   --color-tafelrand:rgb(238, 191, 120);
   --color-h2:rgb(127, 70, 115);
@@ -45,7 +45,7 @@
 
 body {
   background-color: var(--color-achtergrondBody);
-  cursor: url(../images/icons8-joker-dc-32.png) 15 10, pointer; /* 15 10 Zorgt ervoor dat het klikpunt IN de Joker zit, niet aan het randje */
+  /* cursor: url(../images/icons8-joker-dc-32.png) 15 10, pointer;  */
 }
 
 header {
@@ -70,7 +70,7 @@ h2 {
 
 
 /*************************/
-/* SECTIE 1: JOKERKAARTEN */
+/* SECTIE 1: Kaarten */
 /*************************/
 
 
@@ -80,7 +80,7 @@ section:first-of-type {
   margin-left: 3em;
   margin-right: 3em;
 
-  border-radius: 40em/5em;/* Van: https://css-tricks.com/almanac/properties/b/border-radius/ */
+  border-radius: 2em/2em;
   border-style: ridge;
   border-width: 1.5em;
   border-color: var(--color-tafelrand);
@@ -103,7 +103,7 @@ li {
 }
 
 button {
-  display: flex; /* Zorgt dat alles mooi in het midden komt te staan */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
