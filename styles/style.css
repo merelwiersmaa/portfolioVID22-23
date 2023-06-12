@@ -15,19 +15,11 @@
 
 
 @font-face {
-  font-family: 'whySoSerious';
-  src: url('../fonts/bearpaw_-webfont.woff2') format('woff2'),
-       url('../fonts/bearpaw_-webfont.woff') format('woff');
-  /* font-weight: normal;      =
-  font-style: normal;          = Getypt door Sanne
-  font-display: fallback;      =    */   
+  font-family: 'titel';
+  src: url('../fonts/abrilfatface-regular-webfont.woff2') format('woff2'),
+       url('../fonts/abrilfatface-regular-webfont.woff') format('woff');  
 }
 
-@font-face {
-  font-family: 'tekstP';
-  src: url('../fonts/qarmic_sans_abridged-webfont.woff') format('woff'),
-       url('../fonts/qarmic_sans_abridged-webfont.woff2') format('woff2'); 
-}
 
 
 
@@ -37,14 +29,12 @@
 
 
 :root {
-  --color-titelsKopjes: rgb(200, 0, 0);
+  --color-titelsKopjes: rgb(255, 255, 255);
   --color-kaarttafel:rgb(25, 95, 42);
   --color-cards:rgb(235, 223, 196);
   --color-tafelrand:rgb(238, 191, 120);
-  /* --color-achtergrondBody: rgb(26,26,26);  <-- rgb van achtergrond afbeelding*/
-  /* om de afbeelding en body achtergrond te matchen werkt niet met dezelfde
-  rgb code, dus moet ik de body rgb code iets verhogen, om het dezelfde kleur te geven. */
-  --color-achtergrondBody: rgb(34, 34, 34);
+  --color-h2:rgb(127, 70, 115);
+  --color-achtergrondBody: rgb(226, 186, 219);
 }
 
 
@@ -60,47 +50,22 @@ body {
 
 header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  
-  /* Hieronder getypt door Sanne */
-  height: 37vh; 
-  background-image: url('../images/achtergrondV2.jpg');
-  background-size: auto 47vh;
-  background-position: center -10vh;
-  background-repeat: no-repeat;
 }
 
 h1 {
-  rotate: -15deg;
-  padding-left: .5em;
-
-  font-family: whySoSerious, fantasy; /* Mocht het whySoSerious font niet kunnen op de browser, dan pakt hij de fantasy */
-  font-size: 6.2em;
+  font-family: titel;
+  font-size: 7em;
 
   color:var(--color-titelsKopjes);
-  text-shadow: 0em 0em 1.5em black;
+  text-shadow: 0em 0em .5em black;
+  margin-bottom: 0;
 }
 
-
-/*****************/
-/* ANIMATIE H1 */
-/****************/
-
-
-@keyframes serious {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(360deg); /* Deze keyframes vormen de animatie voor de H1: hover (een rondje draaien) */
-  }
-}
-
-h1:hover {
-  animation-name: serious;
-  animation-duration:.6s;
-  animation-iteration-count: infinite;
+h2 {
+  margin-top: 0;
+  color:var(--color-h2);
 }
 
 
