@@ -208,14 +208,15 @@ dialog form {
 dialog form h2 {
   margin-top: .5em;
 
-  font-family: whySoSerious;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 2em;
 
-  color: var(--color-titelsKopjes);
+  color: var(--color-h2);
 }
 
 dialog form h3 {
-  font-family: tekstP;
+  font-family: 'Times New Roman', Times, serif;
+  color: var(--color-h2);
 }
 
 dialog form p {
@@ -237,11 +238,8 @@ dialog form img {
 /*SLUITKNOP*/
 /*************/
 
-
-/* de close button nam automatisch de styling over van de originele buttons (kaarten)
-dus die moet ik hier 'resetten'. deze class geldt voor alle sluitknoppen van alle kaarten */
 .sluitKnop {
-  position: absolute; /* Zorgt dat de sluitknop (kruisje) helemaal rechtsbovenin staat */
+  position: absolute; 
   top: .3em;
   right:.3em;
 
@@ -249,7 +247,7 @@ dus die moet ik hier 'resetten'. deze class geldt voor alle sluitknoppen van all
   width: 1.5em;
 
   background-color: transparent;
-  color: var(--color-titelsKopjes);
+  color: red;
 	font-size: 2.5em;
   
   border-style: none;
@@ -258,10 +256,11 @@ dus die moet ik hier 'resetten'. deze class geldt voor alle sluitknoppen van all
 
 .sluitKnop:hover {
   cursor: pointer;
+  color: white;
 }
 
 .sluitKnop:focus-visible {
-  outline: groove .15em var(--color-titelsKopjes);
+  outline: groove .15em red;
 }
 
 
