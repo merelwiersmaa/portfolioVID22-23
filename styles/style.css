@@ -227,8 +227,8 @@ dialog form p {
 dialog form img {
   margin-top: 1em;
 
-  height: 14em;
-  width: 23em;
+  /* height: 14em; */
+  width: 47vh;
 
   border-radius: .5em;
 }
