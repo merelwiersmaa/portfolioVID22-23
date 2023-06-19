@@ -233,6 +233,16 @@ dialog form img {
   border-radius: .5em;
 }
 
+dialog form video {
+
+  margin-top: 1em;
+
+  /* height: 14em; */
+  width: 47vh;
+
+  border-radius: .5em;
+}
+
 
 /*************/
 /*SLUITKNOP*/
